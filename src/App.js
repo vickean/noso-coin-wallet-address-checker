@@ -52,8 +52,8 @@ function App() {
             padding: "1rem",
           }}
         >
-          <div style={{ fontSize: "1rem" }}>TOTAL:</div>
-          <div style={{ fontSize: "2.5rem" }}>
+          <div style={{ fontSize: "0.8rem" }}>TOTAL:</div>
+          <div style={{ fontSize: "2rem" }}>
             {addressData.reduce((pre, cur) => pre + cur.balance, 0) / 100000000}
           </div>
         </div>
@@ -79,8 +79,16 @@ function App() {
                   paddingBottom: "0.5rem",
                 }}
               >
-                <div style={{ fontSize: "1rem" }}>ADDRESS:</div>
-                <div>{address}</div>
+                <div style={{ fontSize: "0.8rem" }}>ADDRESS:</div>
+                <div
+                  style={{
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    fontSize: "1.3rem",
+                  }}
+                >
+                  {address}
+                </div>
               </div>
               <div
                 style={{
@@ -92,7 +100,7 @@ function App() {
                   paddingBottom: "0.5rem",
                 }}
               >
-                <div style={{ fontSize: "1rem" }}>ALIAS:</div>
+                <div style={{ fontSize: "0.8rem" }}>ALIAS:</div>
                 <div>{alias || "N/A"}</div>
               </div>
               <div
@@ -100,11 +108,12 @@ function App() {
                   display: "flex",
                   flexDirection: "column",
                   textAlign: "left",
-                  flex: 1,
+                  flex: 2,
+                  minWidth: "100%",
                   paddingBottom: "0.5rem",
                 }}
               >
-                <div style={{ fontSize: "1rem" }}>BALANCE:</div>
+                <div style={{ fontSize: "0.8rem" }}>BALANCE:</div>
                 <div>{balance / 100000000}</div>
               </div>
               <div
@@ -116,7 +125,7 @@ function App() {
                   paddingBottom: "0.5rem",
                 }}
               >
-                <div style={{ fontSize: "1rem" }}>INCOMING:</div>
+                <div style={{ fontSize: "0.8rem" }}>INCOMING:</div>
                 <div>{incoming / 100000000}</div>
               </div>
               <div
@@ -128,7 +137,7 @@ function App() {
                   paddingBottom: "0.5rem",
                 }}
               >
-                <div style={{ fontSize: "1rem" }}>OUTGOING:</div>
+                <div style={{ fontSize: "0.8rem" }}>OUTGOING:</div>
                 <div>{outgoing / 100000000}</div>
               </div>
             </div>
