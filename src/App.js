@@ -15,9 +15,10 @@ function App() {
   const [addressData, setAddressData] = useState([]);
 
   const getWalletData = async (address_array) => {
+    // http://api.allorigins.win/get?url=
     const promises_array = address_array.map((address) => {
       return axios.get(
-        `http://api.allorigins.win/get?url=https://explorer.nosocoin.com/api/v1/address/${address}.json`
+        `https://explorer.nosocoin.com/api/v1/address/${address}.json`
       );
     });
 
